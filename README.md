@@ -1,5 +1,10 @@
 # Demo
 
+Setting the right Airflow user
+On Linux, the quick-start needs to know your host user id and needs to have group id set to 0. Otherwise the files created in dags, logs and plugins will be created with root user ownership. You have to make sure to configure them for the docker-compose:
+```
+mkdir -p ./dags ./logs ./plugins ./config
+```
 Initialize the database
 On all operating systems, you need to run database migrations and create the first user account. To do this, run.
 ```
@@ -24,7 +29,8 @@ To see jupyter logs
 docker logs -f course_jupyterlab
 ```
 <b>Airflow</b> available localhost:8080
-<b>Pg Admin</b> available localhost:5050
+
+<b>PgAdmin</b> available localhost:5050
 
 
 
