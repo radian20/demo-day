@@ -272,11 +272,10 @@ services:
       - "8888:8888"
     restart: unless-stopped
     volumes:
-      - ${AIRFLOW_PROJ_DIR:-.}/dags:/opt/airflow/dags
-      - ${AIRFLOW_PROJ_DIR:-.}/notebooks:/opt/airflow/notebooks
+      - ./notebooks:/home/jovyan/work
     environment:
       - PYTHONPATH=/opt/airflow/
-    command: jupyter lab --port 8888 --allow-root
+    command: jupyter lab --port 8888 --allow-root --ip='*' --NotebookApp.token='' --NotebookApp.password=''
 
   pgadmin:
     image: dpage/pgadmin4
