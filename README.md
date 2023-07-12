@@ -30,7 +30,7 @@ password: admin
 ------
 <b>Postgres db</b>
 
-host: localhost
+host: host.docker.internal
 
 port: 54322
 
